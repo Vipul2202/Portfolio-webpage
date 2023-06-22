@@ -341,7 +341,7 @@
                     
                 </div>
                 <div class="contact-right">
-                    <form>
+                    <form name="submit-to-google-sheet">
                         <input type="text" name="Name" placeholder="Please enter your full name" required>
                         <input type="Email" name="Email" placeholder="Please enter your email" required>
                         <textarea name="message" rows="6"
@@ -382,7 +382,17 @@
         }
     </script>
 
-
+    <!-- <script>
+        const scriptURL = '<SCRIPT URL>'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script> -->
     <script>
         var sidemenu = document.getElementById("sidemenu");
         function openmenu() {
@@ -393,6 +403,17 @@
         }
 
     </script> 
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxmkHKVkaPu-KABfij1mnKBoTjhhSE_5CX4UPEG9CR_mES0DsaDNILZv32RGzDgx5VC/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
 
 
 </body>
